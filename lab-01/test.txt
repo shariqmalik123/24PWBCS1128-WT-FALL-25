@@ -1,0 +1,2 @@
+hello i am shariq malik i am a cs student and a flutter developer as well
+git add test.txt
