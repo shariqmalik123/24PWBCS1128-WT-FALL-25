@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to My Website</h1>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Shariq - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- General Body and Resets --- */
+      body {
+        /* Use a modern, clean font */
+        font-family: "Inter", sans-serif;
+        /* Remove the flexbox properties from the body. 
+           We will control centering inside each section instead. */
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff; /* Use a clean white background */
+        color: #1f2937; /* A dark gray for text is easier on the eyes than pure black */
+      }
+
+      /* --- Reusable Container --- */
+      /* This is the most important change. This class will be used in the header
+         and in every section to center the content on the page. */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* --- Header and Navigation --- */
+      header {
+        background-color: white;
+        width: 100%;
+        /* Use a subtle border instead of a heavy box-shadow to match the example */
+        border-bottom: 1px solid #e5e7eb;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        /* The container handles the width and centering, so the navbar just needs to handle flex */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem; /* Give the navbar a bit more vertical space */
+      }
+
+      .logo a {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px; /* Increased gap slightly */
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #4b5563; /* A softer gray for nav links */
+        font-weight: 500; /* Slightly lighter font-weight */
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #4f46e5; /* A modern indigo/blue for the hover effect */
+      }
+
+      /* --- Main Content Section --- */
+      section {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .intro .subtitle {
+        color: #4f46e5; /* Matching the hover color */
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .intro h1 {
+        /* Reduced font-size for a cleaner look. 500% is very large. */
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2; /* Improve line spacing */
+      }
+
+      .intro p {
+        color: #4b5563;
+        font-size: 1.25rem; /* Slightly smaller font size */
+        max-width: 600px; /* Constrain the width of the paragraph for readability */
+        margin: 0 auto; /* Center the paragraph */
+      }
+
+      .intro span {
+        text-transform: uppercase;
+        color: #4f46e5;
+      }
+
+      .explore-button {
+        margin-top: 2%;
+        display: inline-block;
+        background-color: #2c3e50;
+        color: #ffffff;
+        /* Updated padding */
+        padding: 1rem 3rem;
+        /* Updated border-radius to be more rounded */
+        border-radius: 0.75rem;
+        border: 1px solid transparent;
+        text-decoration: none;
+        /* Updated font-weight */
+        font-weight: 600;
+        font-size: 1rem;
+        /* Updated transition to include transform */
+        transition: background-color 0.3s, transform 0.3s;
+        /* Updated to a larger box-shadow */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .explore-button:hover {
+        background-color: #4f46e5;
+        /* Added the scale transform for the "pop" effect on hover */
+        transform: scale(1.05);
+      }
+
+      /* --- Labs Section --- */
+      #labs {
+        background-color: #f9fafb; /* A very light gray background */
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        /* Set min-height to auto, as it doesn't need to be 100vh */
+        min-height: auto;
+      }
+
+      #labs h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 2rem;
+        text-align: left;
+      }
+
+      .card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        color: #6b7280; /* A lighter gray for the description */
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .card a {
+        color: #4f46e5;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .card a:hover {
+        color: #3730a3;
+      }
+
+      /* --- NEW FOOTER STYLES --- */
+      footer {
+        background-color: #1f2937; /* Dark background */
+        color: #e5e7eb; /* Light text */
+        padding: 3rem 0;
+        text-align: center;
+        font-size: 0.9rem;
+        /* We remove min-height from the footer */
+      }
+
+      footer p {
+        margin: 0.5rem 0;
+        color: #9ca3af; /* A slightly softer gray */
+      }
+
+      footer .footer-links a {
+        color: #ffffff; /* White link */
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        margin: 0 0.5rem;
+      }
+
+      footer .footer-links a:hover {
+        color: #4f46e5; /* Highlight color on hover */
+      }
+
+      footer .copyright {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #6b7280; /* Lightest gray for copyright */
+      }
+      /* --- End of Footer Styles --- */
+
+      @media (max-width: 768px) {
+        .intro h1 {
+          font-size: 2.5rem;
+        }
+        nav {
+          display: none;
+        }
+        .card-grid {
+          grid-template-columns: 1fr; /* 1 column on mobile */
+        }
+        #labs h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo"><a href="#">Muhammad Shariq</a></div>
+          <nav>
+            <ul>
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#labs">Lab Tasks</a></li>
+              <li>
+                <a href="http://github.com/shariqmalik123" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="introduction">
+      <div class="container">
+        <div class="intro">
+          <p class="subtitle">computer science student | uet</p>
+          <h1>Showcasing Innovative <span>Web Development</span> Projects</h1>
+          <p>
+            Welcome to my portfolio of lab exercises, completed as part of the
+            Web Technologies course at the
+            <strong>University of Engineering & Technology (UET)</strong>. This
+            collection demonstrates practical skills in HTML and CSS.
+          </p>
+        </div>
+        <a class="explore-button" href="#labs">Explore Tasks</a>
+      </div>
+    </section>
+
+    <section id="labs">
+      <div class="container">
+        <h2>All Completed Labs</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Lab 1 & 2</h3>
+            <p>Basics of HTML</p>
+            <a href="lab-02/lab1-2.html">View Lab Tasks&rarr;</a>
+          </div>
+          <div class="card">
+            <h3>Lab 3 & 4</h3>
+            <p>CSS Fundamentals: Styling and Visual Design</p>
+            <a href="lab03-04-css/lab3-4.html">View Lab Tasks &rarr;</a>
+          </div>
+          <div class="card">
+            <h3>Lab 5</h3>
+            <p>Css Layout Techniques and responsive Design</p>
+            <a href="lab5/lab-5.html">View Lab Tasks &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>University of Engineering & Technology (UET)</p>
+        <p>Web Technologies Course Portfolio</p>
+        <p>Student: Muhammad Shariq | ID: 24PWBCS1128</p>
+        <div class="footer-links">
+          <a href="http://github.com/shariqmalik123" target="_blank"
+            >GitHub Profile</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to My Website</h1>
+  </body>
+</html>
