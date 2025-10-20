@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Task 5 — Flexbox Card Layout</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial;background:#f3f4f6;padding:1rem}
+.grid{display:flex;flex-wrap:wrap;gap:1rem}
+.card{background:#fff;border-radius:8px;display:flex;flex-direction:column;padding:1rem;flex:1 1 calc(100% - 2rem);min-width:0}
+.card .media{height:160px;border-radius:6px;background:#e6eefc;margin-bottom:.75rem}
+.card h3{margin:.25rem 0}
+.card .content{flex:1 1 auto}
+.card .actions{display:flex;gap:.5rem;margin-top:1rem;align-items:end}
+@media (min-width:600px){ .card{flex:1 1 calc(50% - 1rem)} }
+@media (min-width:1000px){ .card{flex:1 1 calc(33.333% - 1rem)} }
+.card-inner{display:flex;flex-direction:column;min-height:220px}
+.card .actions{margin-top:auto}
+</style>
+</head>
+<body>
+  <h1>Flexbox Card Layout</h1>
+  <div class="grid">
+    <article class="card">
+      <div class="card-inner">
+        <div class="media"></div>
+        <h3>Card Title</h3>
+        <div class="content">Short description. Content may vary in length but cards keep equal height thanks to flexbox alignment.</div>
+        <div class="actions">
+          <button>Read</button>
+          <button>Share</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-inner">
+        <div class="media"></div>
+        <h3>Longer Content Card</h3>
+        <div class="content">This card contains more text to demonstrate equal height behavior. Use flexbox column with min-height and actions pushed to bottom using margin-top:auto.</div>
+        <div class="actions">
+          <button>Read</button>
+          <button>Save</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-inner">
+        <div class="media"></div>
+        <h3>Another Card</h3>
+        <div class="content">Even more content so you can see equal-height behavior across a row of cards.</div>
+        <div class="actions">
+          <button>Details</button>
+          <button>Buy</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

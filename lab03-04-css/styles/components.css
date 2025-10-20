@@ -1,0 +1,16 @@
+
+/* styles/components.css - buttons, cards, forms */
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.btn-primary{background:linear-gradient(180deg,#3b82f6,#2563eb);color:#fff;box-shadow:0 6px 12px rgba(37,99,235,0.18)}
+.btn-ghost{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+
+.input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6eefc}
+.input:focus{outline:none;box-shadow:0 6px 18px rgba(37,99,235,0.06);border-color:#93c5fd}
+
+/* card */
+.card-cta{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.badge{background:#eef2ff;padding:6px 8px;border-radius:8px;color:#1e3a8a;font-weight:700;font-size:0.85rem}
+
+/* table like */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:left;font-size:0.95rem}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Task 4 — Flexbox Navigation System</title>
+<style>
+:root{--accent:#0ea5e9;--bg:#f8fafc}
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Arial;margin:0;background:var(--bg)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 1rem;background:#fff;border-bottom:1px solid #e6edf3}
+.brand{font-weight:700;color:var(--accent)}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{padding:.5rem .75rem;text-decoration:none;color:#0f172a;border-radius:6px}
+.nav a:hover{background:rgba(14,165,233,0.08)}
+.hamburger{display:none;cursor:pointer;padding:.5rem;border-radius:6px}
+.hamburger div{width:22px;height:2px;background:#0f172a;margin:4px 0;transition:transform .25s,opacity .25s}
+.layout{display:flex;gap:1rem;padding:1rem}
+.sidebar{width:240px;background:#fff;border-radius:8px;padding:1rem;box-shadow:0 2px 8px rgba(2,6,23,0.06)}
+.snav{display:flex;flex-direction:column;gap:.5rem}
+.content{flex:1}
+.mobile-panel{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:none;justify-content:flex-start}
+.mobile-panel .menu{width:260px;background:#fff;height:100%;padding:1rem;overflow:auto;transform:translateX(-8px);transition:transform .28s ease}
+.dropdown{position:relative}
+.dropdown-btn{display:flex;align-items:center;gap:.5rem;cursor:pointer}
+.dropdown-panel{position:absolute;top:calc(100% + .5rem);left:0;min-width:180px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,0.12);display:none;flex-direction:column;padding:.5rem}
+.dropdown-panel a{padding:.5rem;border-radius:6px}
+@media (max-width: 768px){
+  .nav{display:none}
+  .hamburger{display:block}
+  .sidebar{display:none}
+  .mobile-panel{display:flex}
+  .dropdown-panel{position:static;box-shadow:none;border-radius:6px}
+  .mobile-panel.open .menu{transform:translateX(0)}
+}
+.dropdown:hover .dropdown-panel{display:flex}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MySite</div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">About</a>
+      <div class="dropdown">
+        <div class="dropdown-btn">Services ▾</div>
+        <div class="dropdown-panel" role="menu">
+          <a href="#">Design</a>
+          <a href="#">Development</a>
+          <a href="#">Consulting</a>
+        </div>
+      </div>
+      <a href="#">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" onclick="document.querySelector('.mobile-panel').classList.toggle('open')">
+      <div></div><div></div><div></div>
+    </button>
+  </header>
+
+  <div class="mobile-panel" onclick="if(event.target===this) this.classList.remove('open')">
+    <div class="menu" role="dialog" aria-label="Mobile menu">
+      <h3>Menu</h3>
+      <nav class="snav">
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">About</a>
+        <details>
+          <summary style="cursor:pointer;padding:.5rem 0">Services</summary>
+          <a href="#">Design</a>
+          <a href="#">Development</a>
+        </details>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="snav">
+        <a href="#">Overview</a>
+        <a href="#">Projects</a>
+        <a href="#">Teams</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <h1>Flexbox Navigation Demo</h1>
+      <p>This demo uses flexbox for both horizontal and vertical navigation, has a hamburger/off-canvas menu for mobile and dropdowns that stack on small screens.</p>
+    </main>
+  </div>
+</body>
+</html>

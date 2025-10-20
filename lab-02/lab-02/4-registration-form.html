@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4: Student Registration Form</title>
+    <!-- Load Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3490dc',
+                        'secondary-gray': '#f4f4f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #3490dc;
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4 font-sans">
+
+    <div class="w-full max-w-lg bg-white p-8 rounded-xl shadow-2xl border border-gray-200">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Student Registration</h1>
+        <p class="text-gray-600 mb-8 text-center">Please fill out all required information below to register.</p>
+
+        <form id="registration-form" onsubmit="handleFormSubmission(event)" class="space-y-6">
+
+            <!-- Name and Registration Number -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 text-left mb-1">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="E.g., Muhammad Shariq" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150">
+                </div>
+                <div>
+                    <label for="reg-number" class="block text-sm font-medium text-gray-700 text-left mb-1">Registration Number</label>
+                    <input type="text" id="reg-number" name="reg-number" placeholder="E.g., 2024-CS-001" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150">
+                </div>
+            </div>
+            
+            <!-- Email and Password Fields -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 text-left mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@university.edu" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700 text-left mb-1">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Min. 8 characters" required
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue transition duration-150">
+                </div>
+            </div>
+
+            <!-- Course Selection Dropdown -->
+            <div>
+                <label for="course" class="block text-sm font-medium text-gray-700 text-left mb-1">Select Course</label>
+                <select id="course" name="course" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:ring-primary-blue focus:border-primary-blue transition duration-150 appearance-none">
+                    <option value="" disabled selected>Choose your major...</option>
+                    <option value="cs">Computer Science (CS)</option>
+                    <option value="ee">Electrical Engineering (EE)</option>
+                    <option value="me">Mechanical Engineering (ME)</option>
+                    <option value="ce">Civil Engineering (CE)</option>
+                </select>
+            </div>
+
+            <!-- Semester Radio Buttons -->
+            <fieldset>
+                <legend class="text-sm font-medium text-gray-700 text-left mb-2">Current Semester</legend>
+                <div class="mt-2 flex flex-wrap gap-4 justify-start">
+                    <!-- Radio Button 1 -->
+                    <div class="flex items-center">
+                        <input id="sem-1" name="semester" type="radio" value="1" required
+                               class="h-4 w-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                        <label for="sem-1" class="ml-2 block text-sm text-gray-700">1st</label>
+                    </div>
+                    <!-- Radio Button 2 -->
+                    <div class="flex items-center">
+                        <input id="sem-2" name="semester" type="radio" value="2"
+                               class="h-4 w-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                        <label for="sem-2" class="ml-2 block text-sm text-gray-700">2nd</label>
+                    </div>
+                    <!-- Radio Button 3 -->
+                    <div class="flex items-center">
+                        <input id="sem-3" name="semester" type="radio" value="3"
+                               class="h-4 w-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                        <label for="sem-3" class="ml-2 block text-sm text-gray-700">3rd</label>
+                    </div>
+                    <!-- Radio Button 4 -->
+                    <div class="flex items-center">
+                        <input id="sem-4" name="semester" type="radio" value="4"
+                               class="h-4 w-4 text-primary-blue border-gray-300 focus:ring-primary-blue">
+                        <label for="sem-4" class="ml-2 block text-sm text-gray-700">4th+</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Terms and Conditions Checkbox -->
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="terms" name="terms" type="checkbox" required
+                           class="h-4 w-4 text-primary-blue border-gray-300 rounded focus:ring-primary-blue">
+                </div>
+                <div class="ml-3 text-sm text-left">
+                    <label for="terms" class="font-medium text-gray-700">I agree to the <a href="#" class="text-primary-blue hover:underline">Terms and Conditions</a></label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" 
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-lg font-medium text-white bg-primary-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-blue transition duration-150 ease-in-out transform hover:scale-[1.01]">
+                    Register Now
+                </button>
+            </div>
+        </form>
+
+        <!-- Message Box for Submission Status -->
+        <div id="status-message-box" class="mt-6 p-4 text-sm rounded-lg text-center hidden" role="alert">
+            <!-- Content populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Handles the form submission event.
+         * Note: In a real application, you would send this data to a server.
+         */
+        function handleFormSubmission(event) {
+            // Prevent the default form submission action
+            event.preventDefault(); 
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Get the message box element
+            const msgBox = document.getElementById('status-message-box');
+
+            // Simulate form processing success
+            console.log("Form Data Submitted:", data);
+
+            // Display success message
+            msgBox.classList.remove('hidden', 'bg-red-100', 'text-red-800');
+            msgBox.classList.add('bg-green-100', 'text-green-800');
+            msgBox.innerHTML = '<strong>Success!</strong> Registration data captured. Check console for details.';
+
+            // Optional: Clear the form after submission
+            form.reset(); 
+            
+            // Auto-hide the message after 5 seconds (not an alert)
+            setTimeout(() => {
+                msgBox.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

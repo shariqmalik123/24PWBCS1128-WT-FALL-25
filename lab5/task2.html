@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float-Based Magazine Layout</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0077cc;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Container for main layout */
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      overflow: hidden; /* clear floats */
+    }
+
+    /* Sidebar */
+    aside {
+      float: right;
+      width: 30%;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Main Content */
+    article {
+      float: left;
+      width: 68%;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Multi-column text */
+    .multi-column {
+      column-count: 2;
+      column-gap: 40px;
+      text-align: justify;
+    }
+
+    /* Wrapped images */
+    .float-img {
+      float: left;
+      margin: 10px 20px 10px 0;
+      width: 40%;
+      border-radius: 8px;
+    }
+
+    /* Sidebar content */
+    aside h3 {
+      color: #0077cc;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 5px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    aside li {
+      margin: 10px 0;
+    }
+
+    footer {
+      clear: both;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* ---------------- Responsive Design ---------------- */
+
+    /* Tablet View */
+    @media (max-width: 768px) {
+      article, aside {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .multi-column {
+        column-count: 1;
+      }
+    }
+
+    /* Mobile View */
+    @media (max-width: 480px) {
+      .float-img {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      header {
+        font-size: 1.2em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tech Today Magazine</h1>
+    <p>Your daily dose of technology insights</p>
+  </header>
+
+  <div class="container">
+    <!-- Main Article Section -->
+    <article>
+      <h2>The Rise of Artificial Intelligence</h2>
+      <img src="https://via.placeholder.com/400x250" alt="AI concept" class="float-img">
+      <div class="multi-column">
+        <p>
+          Artificial Intelligence (AI) has become one of the most influential technologies of the 21st century. 
+          From virtual assistants to self-driving cars, AI is reshaping industries across the globe. 
+          Machine learning and neural networks have given computers the ability to learn from data and make predictions 
+          that were once only possible for humans.
+        </p>
+        <p>
+          In healthcare, AI assists in diagnosing diseases earlier than ever before. In finance, it detects fraud patterns 
+          and automates complex trading systems. Meanwhile, creative industries are exploring AI-generated art, music, 
+          and storytelling, raising new questions about originality and human creativity.
+        </p>
+        <p>
+          As AI continues to evolve, ethical considerations around privacy, bias, and job displacement become more pressing. 
+          Governments and researchers are working to develop frameworks that ensure AI benefits humanity as a whole.
+        </p>
+      </div>
+    </article>
+
+    <!-- Sidebar Section -->
+    <aside>
+      <h3>Featured Topics</h3>
+      <ul>
+        <li>Machine Learning Basics</li>
+        <li>Future of Self-Driving Cars</li>
+        <li>Chatbots in Customer Service</li>
+        <li>Smart Devices & IoT</li>
+        <li>Cybersecurity Trends</li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    &copy; 2025 Tech Today Magazine | Designed by Shariq Malik
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display Property Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f8f9fa;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0077cc;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ---------- 1. Block vs Inline vs Inline-Block ---------- */
+    .block, .inline, .inline-block {
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .block {
+      background: #ff6b6b;
+      display: block;
+    }
+
+    .inline {
+      background: #51cf66;
+      display: inline;
+    }
+
+    .inline-block {
+      background: #339af0;
+      display: inline-block;
+    }
+
+    /* ---------- 2. Table Display Without Table Markup ---------- */
+    .table {
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-row {
+      display: table-row;
+    }
+
+    .table-cell {
+      display: table-cell;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    /* ---------- 3. Responsive Display Changes ---------- */
+    .responsive-box {
+      display: inline-block;
+      background: #845ef7;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .responsive-box {
+        display: block;
+        background: #f06595;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .responsive-box {
+        display: none; /* hidden on small screens */
+      }
+    }
+
+    /* ---------- 4. Hidden Elements on Different Screens ---------- */
+    .hidden-demo {
+      padding: 20px;
+      background: #fab005;
+      color: #222;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    /* Hide on tablet */
+    @media (max-width: 768px) and (min-width: 481px) {
+      .hidden-tablet {
+        display: none;
+      }
+    }
+
+    /* Hide on mobile */
+    @media (max-width: 480px) {
+      .hidden-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Display Property Showcase</h1>
+
+  <!-- 1️Block vs Inline vs Inline-Block -->
+  <section>
+    <h2>1. Block vs Inline vs Inline-Block</h2>
+    <p><strong>Block elements</strong> take full width and start on a new line:</p>
+    <div class="block">Block 1</div>
+    <div class="block">Block 2</div>
+
+    <p><strong>Inline elements</strong> only take as much width as needed:</p>
+    <span class="inline">Inline 1</span>
+    <span class="inline">Inline 2</span>
+
+    <p><strong>Inline-block elements</strong> flow like inline but keep box size:</p>
+    <div class="inline-block">Inline-Block 1</div>
+    <div class="inline-block">Inline-Block 2</div>
+  </section>
+
+  <!-- Table Display Without Table Tags -->
+  <section>
+    <h2>2. Table Display Without &lt;table&gt; Tag</h2>
+    <div class="table">
+      <div class="table-row">
+        <div class="table-cell"><strong>Name</strong></div>
+        <div class="table-cell"><strong>Age</strong></div>
+        <div class="table-cell"><strong>City</strong></div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Shariq</div>
+        <div class="table-cell">20</div>
+        <div class="table-cell">Peshawar</div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">Ali</div>
+        <div class="table-cell">21</div>
+        <div class="table-cell">Lahore</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3️Responsive Display Changes -->
+  <section>
+    <h2>3. Responsive Display with Media Queries</h2>
+    <p>Resize the screen to see the behavior change:</p>
+    <div class="responsive-box">Box 1</div>
+    <div class="responsive-box">Box 2</div>
+    <div class="responsive-box">Box 3</div>
+    <p><small>Desktop: Inline-block | Tablet: Block | Mobile: Hidden</small></p>
+  </section>
+
+  <!-- 4️⃣ Hidden Elements Demo -->
+  <section>
+    <h2>4. Hidden Elements on Different Screens</h2>
+    <div class="hidden-demo hidden-mobile">Hidden on Mobile Screens</div>
+    <div class="hidden-demo hidden-tablet">Hidden on Tablet Screens</div>
+    <div class="hidden-demo">Always Visible</div>
+  </section>
+
+</body>
+</html>

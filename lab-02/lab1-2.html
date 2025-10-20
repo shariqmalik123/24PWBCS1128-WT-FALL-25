@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Shariq Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and font -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "uet-blue": "#2c3e50",
+              "uet-light": "#3498db",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Inter Font Import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 font-sans text-uet-blue min-h-screen flex flex-col">
+
+    <main class="flex-grow">
+      <!-- Lab Exercises Section -->
+      <section id="labs" class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">
+            Completed Lab Tasks (Lab 1 - 2)
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Lab Card 1 -->
+            <a
+              href="lab-01/index.html"
+              class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 hover:border-uet-light"
+            >
+              <h3 class="text-xl font-semibold text-uet-blue mb-2">
+                Lab 01: Basic HTML Structure
+              </h3>
+              <p class="text-gray-500 text-sm">
+                A fundamental exercise focusing on semantic HTML elements and
+                document structure.
+              </p>
+              <span class="mt-4 inline-block text-uet-light font-medium text-sm"
+                >View Project &rarr;</span
+              >
+            </a>
+
+            <!-- Lab Card 2 -->
+            <a
+              href="lab-02/profile.html"
+              class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 hover:border-uet-light"
+            >
+              <h3 class="text-xl font-semibold text-uet-blue mb-2">
+                Lab 02 Task 1: Profile
+              </h3>
+              <p class="text-gray-500 text-sm">
+                Implementing a modern, profile.
+              </p>
+              <span class="mt-4 inline-block text-uet-light font-medium text-sm"
+                >View Project &rarr;</span
+              >
+            </a>
+
+            <!-- Lab Card 3 -->
+            <a
+              href="lab-02/2-schedule.html"
+              class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 hover:border-uet-light"
+            >
+              <h3 class="text-xl font-semibold text-uet-blue mb-2">
+                Lab 02 Task 2: Course Schedule
+              </h3>
+              <p class="text-gray-500 text-sm">
+                Creating an attractive courses schedule for my semester courses
+              </p>
+              <span class="mt-4 inline-block text-uet-light font-medium text-sm"
+                >View Project &rarr;</span
+              >
+            </a>
+
+            <!-- Lab Card 4 -->
+            <a
+              href="lab-02/3-navigation.html"
+              class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 hover:border-uet-light"
+            >
+              <h3 class="text-xl font-semibold text-uet-blue mb-2">
+                Lab 02 Task 3: Navigation Menu
+              </h3>
+              <p class="text-gray-500 text-sm">
+                A functional, Navigation bar that navigates to different
+                sections
+              </p>
+              <span class="mt-4 inline-block text-uet-light font-medium text-sm"
+                >View Project &rarr;</span
+              >
+            </a>
+
+            <!-- Lab Card 5 -->
+            <a
+              href="lab-02/4-registration-form.html"
+              class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 hover:border-uet-light"
+            >
+              <h3 class="text-xl font-semibold text-uet-blue mb-2">
+                Lab 02 Task 4: Registration form
+              </h3>
+              <p class="text-gray-500 text-sm">a student Registration form</p>
+              <span class="mt-4 inline-block text-uet-light font-medium text-sm"
+                >View Project &rarr;</span
+              >
+            </a>
+
+            <!-- Lab Card 6 (This Page) -->
+            <div
+              class="bg-uet-blue p-6 rounded-xl shadow-xl border border-uet-blue"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Task 6: Portfolio Landing Page
+              </h3>
+              <p class="text-gray-200 text-sm">
+                The responsive entry point for the entire project portfolio.
+                (You are here!)
+              </p>
+              <span class="mt-4 inline-block text-white font-medium text-sm"
+                >Current Page</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-uet-blue mt-12 py-8 text-white">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between md:items-center"
+      >
+        <!-- Branding and User Info -->
+        <div class="mb-4 md:mb-0">
+          <p class="text-lg font-semibold">
+            University of Engineering & Technology (UET)
+          </p>
+          <p class="text-sm text-gray-300">Web Technologies Course Portfolio</p>
+          <p class="text-sm text-gray-400 mt-1">
+            Student: Muhammad Shariq | ID: 24PWBCS1128
+          </p>
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="space-y-2 md:space-y-0 md:space-x-6">
+          <a
+            href="https://github.com/shariqmalik123"
+            target="_blank"
+            class="inline-flex items-center text-sm font-medium text-uet-light hover:text-white transition duration-150"
+          >
+            <!-- GitHub Icon (Inline SVG for simplicity) -->
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.418 2.865 8.165 6.818 9.479.5.092.682-.217.682-.483 0-.237-.01-.866-.014-1.692-2.784.603-3.37-.803-3.37-.803-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.072-.608.072-.608 1.007.07 1.532 1.03 1.532 1.03.89 1.529 2.336 1.089 2.903.834.091-.645.35-1.088.636-1.334-2.22-.253-4.555-1.11-4.555-4.945 0-1.092.39-1.983 1.03-2.683-.104-.253-.448-1.272.098-2.65 0 0 .84-.268 2.75 1.026A9.554 9.554 0 0112 5.674c.85.006 1.702.113 2.502.327 1.908-1.294 2.747-1.026 2.747-1.026.546 1.378.202 2.397.098 2.65.64.7 1.027 1.59 1.027 2.683 0 3.843-2.338 4.688-4.566 4.942.359.31.678.92.678 1.855 0 1.334-.012 2.417-.012 2.747 0 .267.172.576.687.479C20.137 20.187 23 16.43 23 12.017 23 6.484 18.522 2 13 2h-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            http://github.com/shariqmalik123
+          </a>
+          <p class="text-xs text-gray-400">© 2024. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

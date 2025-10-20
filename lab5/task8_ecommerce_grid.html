@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Task 8 — E-commerce Grid</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#f7fafc;padding:1rem}.wrap{max-width:1200px;margin:0 auto}.layout{display:grid;grid-template-columns:280px 1fr;gap:1rem}.filters{background:#fff;padding:1rem;border-radius:8px}.products{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}.card{background:#fff;padding:1rem;border-radius:8px;display:flex;flex-direction:column}.media{height:160px;background:#e2e8f0;border-radius:6px;margin-bottom:.75rem}@media (min-width:768px){.products{grid-template-columns:repeat(2,1fr)}}@media (min-width:1100px){.products{grid-template-columns:repeat(4,1fr)}}.filter-toggle{display:none;margin-bottom:1rem}@media (max-width:767px){.layout{grid-template-columns:1fr}.filters{position:fixed;left:0;top:0;height:100%;width:85%;max-width:340px;background:#fff;transform:translateX(-110%);transition:transform .28s;z-index:50;padding:1rem}.filters.open{transform:translateX(0)}.filter-toggle{display:block}}</style></head><body>
+<div class="wrap">
+<button class="filter-toggle" onclick="document.querySelector('.filters').classList.toggle('open')">Toggle Filters</button>
+<div class="layout">
+<aside class="filters"><h3>Filters</h3><label>Category<select><option>All</option><option>Gadgets</option></select></label><hr><label>Price <input type="range" min="0" max="1000"></label></aside>
+<section><h1>Products</h1><div class="products">
+<article class="card"><div class="media"></div><h3>Product Name</h3><p class="desc">Short description.</p><div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center"><strong>$99</strong><button>Add</button></div></article>
+<article class="card"><div class="media"></div><h3>Product 2</h3><p style="margin-top:auto"><strong>$59</strong></p></article>
+<article class="card"><div class="media"></div><h3>Product 3</h3><p style="margin-top:auto"><strong>$199</strong></p></article>
+<article class="card"><div class="media"></div><h3>Product 4</h3><p style="margin-top:auto"><strong>$29</strong></p></article>
+</div></section></div></div></body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task 7 — Holy Grail (Flex)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial;
+        background: #f8fafc;
+      }
+      header,
+      footer {
+        background: #0b5;
+        color: #033;
+        padding: 1rem;
+      }
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .main {
+        display: flex;
+        gap: 1rem;
+        width: 95%;
+        max-width: 1100px;
+        margin: 1rem auto;
+        flex: 1;
+      }
+      .left {
+        width: 200px;
+        background: #fff;
+        padding: 1rem;
+      }
+      .center {
+        flex: 1;
+        background: #fff;
+        padding: 1rem;
+      }
+      .right {
+        width: 240px;
+        background: #fff;
+        padding: 1rem;
+      }
+      @media (max-width: 800px) {
+        .main {
+          flex-direction: column;
+        }
+        .left,
+        .right {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>Holy Grail — Flexbox Version</header>
+      <div class="main">
+        <aside class="left">Left</aside>
+        <section class="center">Center flexible content</section>
+        <aside class="right">Right</aside>
+      </div>
+      <footer>Footer <br>
+        <a href="task7_holy_grail_float.html">task7_holy_grail by float</a><br>
+        <a href="task7_holy_grail_grid.html">task7_holy_grail by grid</a>
+      </footer>
+    </div>
+  </body>
+</html>

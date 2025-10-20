@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Shariq - Portfolio</title>
+    <!-- Using the Inter font for a cleaner, modern look similar to the example -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- General Body and Resets --- */
+      body {
+        /* Use a modern, clean font */
+        font-family: "Inter", sans-serif;
+        /* Remove the flexbox properties from the body. 
+           We will control centering inside each section instead. */
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff; /* Use a clean white background */
+        color: #1f2937; /* A dark gray for text is easier on the eyes than pure black */
+      }
+
+      /* --- Reusable Container --- */
+      /* This is the most important change. This class will be used in the header
+         and in every section to center the content on the page. */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* --- Header and Navigation --- */
+      header {
+        background-color: white;
+        width: 100%;
+        /* Use a subtle border instead of a heavy box-shadow to match the example */
+        border-bottom: 1px solid #e5e7eb;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        /* The container handles the width and centering, so the navbar just needs to handle flex */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem; /* Give the navbar a bit more vertical space */
+      }
+
+      .logo a {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #4f46e5;
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px; /* Increased gap slightly */
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #4b5563; /* A softer gray for nav links */
+        font-weight: 500; /* Slightly lighter font-weight */
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #4f46e5; /* A modern indigo/blue for the hover effect */
+      }
+
+      /* --- Main Content Section --- */
+      section {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .intro .subtitle {
+        color: #4f46e5; /* Matching the hover color */
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .intro h1 {
+        /* Reduced font-size for a cleaner look. 500% is very large. */
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2; /* Improve line spacing */
+      }
+
+      .intro p {
+        color: #4b5563;
+        font-size: 1.25rem; /* Slightly smaller font size */
+        max-width: 600px; /* Constrain the width of the paragraph for readability */
+        margin: 0 auto; /* Center the paragraph */
+      }
+
+      .intro span {
+        text-transform: uppercase;
+        color: #4f46e5;
+      }
+
+      .explore-button {
+        margin-top: 2%;
+        display: inline-block;
+        background-color: #2c3e50;
+        color: #ffffff;
+        /* Updated padding */
+        padding: 1rem 3rem;
+        /* Updated border-radius to be more rounded */
+        border-radius: 0.75rem;
+        border: 1px solid transparent;
+        text-decoration: none;
+        /* Updated font-weight */
+        font-weight: 600;
+        font-size: 1rem;
+        /* Updated transition to include transform */
+        transition: background-color 0.3s, transform 0.3s;
+        /* Updated to a larger box-shadow */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .explore-button:hover {
+        background-color: #4f46e5;
+        /* Added the scale transform for the "pop" effect on hover */
+        transform: scale(1.05);
+      }
+
+      /* --- Labs Section --- */
+      #labs {
+        background-color: #f9fafb; /* A very light gray background */
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      #labs h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 2rem;
+        text-align: left;
+      }
+
+      .card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        color: #6b7280; /* A lighter gray for the description */
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .card a {
+        color: #4f46e5;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .card a:hover {
+        color: #3730a3;
+      }
+
+      @media (max-width: 768px) {
+        .intro h1 {
+          font-size: 2.5rem;
+        }
+        nav {
+          display: none;
+        }
+        .card-grid {
+          grid-template-columns: 1fr; /* 1 column on mobile */
+        }
+        #labs h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- The container is now inside the header -->
+      <div class="container">
+        <div class="navbar">
+          <div class="logo"><a href="#">Muhammad Shariq</a></div>
+          <nav>
+            <ul>
+              <li><a href="#labs">Lab Tasks</a></li>
+              <li><a href="#git">GitHub</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Lab Tasks Section -->
+    <section id="labs">
+      <div class="container">
+        <h2>Completed Lab Tasks (Lab 05)</h2>
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <h3>Task 1: Display Property Showcase</h3>
+            <p>
+              Demonstrating CSS display properties and their responsive
+              behavior.
+            </p>
+            <a href="tasks/task1.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="card">
+            <h3>Task 2: Float-Based Magazine Layout</h3>
+            <p>
+              Building a responsive, multi-column magazine-style layout using
+              floats.
+            </p>
+            <a href="tasks/task2.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="card">
+            <h3>Task 3: Positioning Challenge</h3>
+            <p>
+              Creating a complex layout with fixed, absolute, and sticky
+              elements.
+            </p>
+            <a href="tasks/task3.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 4 -->
+          <div class="card">
+            <h3>Task 4: Flexbox Navigation System</h3>
+            <p>
+              Building a complete and responsive navigation system with Flexbox.
+            </p>
+            <a href="tasks/task4_flexbox_navigation.html"
+              >View Project &rarr;</a
+            >
+          </div>
+          <!-- Card 5 -->
+          <div class="card">
+            <h3>Task 5: Flexbox Card Layout</h3>
+            <p>
+              Creating a responsive card layout with equal height cards using
+              Flexbox.
+            </p>
+            <a href="tasks/task5_flexbox_cards.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 6 -->
+          <div class="card">
+            <h3>Task 6: CSS Grid Photo Gallery</h3>
+            <p>
+              Building a responsive, masonry-style photo gallery with CSS Grid.
+            </p>
+            <a href="tasks/task6_grid_photo_gallery.html"
+              >View Project &rarr;</a
+            >
+          </div>
+          <!-- Card 7 -->
+          <div class="card">
+            <h3>Task 7: Holy Grail Layout</h3>
+            <p>
+              Implementing the holy grail layout using floats, Flexbox, and CSS
+              Grid.
+            </p>
+            <a href="tasks/task7_holy_grail_flex.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 8 -->
+          <div class="card">
+            <h3>Task 8: E-commerce Product Grid</h3>
+            <p>
+              Building a responsive e-commerce product grid with a filter
+              sidebar.
+            </p>
+            <a href="tasks/task8_ecommerce_grid.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 9 -->
+          <div class="card">
+            <h3>Task 9: Dashboard Layout</h3>
+            <p>
+              Creating a responsive admin dashboard combining Grid and Flexbox.
+            </p>
+            <a href="tasks/task9_dashboard.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 10 -->
+          <div class="card">
+            <h3>Task 10: Media Query Demonstration</h3>
+            <p>
+              A page demonstrating layout and typography at different
+              breakpoints.
+            </p>
+            <a href="tasks/task10_media_queries.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 11 -->
+          <div class="card">
+            <h3>Task 11: Advanced Magazine Layout</h3>
+            <p>
+              A complex, asymmetric magazine layout using responsive CSS Grid.
+            </p>
+            <a href="tasks/task11_magazine_grid.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 12 -->
+          <div class="card">
+            <h3>Task 12: Responsive Form Builder</h3>
+            <p>
+              Building a dynamic and responsive multi-column form layout with
+              Flexbox.
+            </p>
+            <a href="tasks/task12_flex_form.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 13 - Highlighted -->
+          <div class="card highlighted">
+            <h3>Task 13: Portfolio with Mixed Techniques</h3>
+            <p>
+              The responsive portfolio you are currently viewing, combining
+              multiple layout methods.
+            </p>
+            <a href="tasks/task13_portfolio.html">Current Page</a>
+          </div>
+          <!-- Card 14 -->
+          <div class="card">
+            <h3>Task 14: Responsive Data Table</h3>
+            <p>
+              A data table that responsively transforms into a card layout on
+              smaller screens.
+            </p>
+            <a href="tasks/task14_responsive_table.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 15 -->
+          <div class="card">
+            <h3>Task 15: Mobile-First Landing Page</h3>
+            <p>
+              Building a complete landing page using the mobile-first design
+              approach.
+            </p>
+            <a href="tasks/task15_mobile_first_landing.html"
+              >View Project &rarr;</a
+            >
+          </div>
+          <!-- Card 16 -->
+          <div class="card">
+            <h3>Task 16: Breakpoint Implementation</h3>
+            <p>
+              Practicing responsive design using common, industry-standard
+              breakpoints.
+            </p>
+            <a href="tasks/task16_breakpoints.html">View Project &rarr;</a>
+          </div>
+          <!-- Card 17 -->
+          <div class="card">
+            <h3>Task 17: Responsive Utility Classes</h3>
+            <p>
+              Creating a set of utility classes for spacing, visibility, and
+              text alignment.
+            </p>
+            <a href="tasks/task17_utilities.html">View Project &rarr;</a>
+          </div>
+
+          <!-- Card 18 -->
+          <div class="card">
+            <h3>Task 18: Dark Mode & Preferences</h3>
+            <p>
+              Dark Mode & Preference Media Queries Implement additional media
+              queries
+            </p>
+            <a href="tasks/task18_preferences.html">View Project &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
