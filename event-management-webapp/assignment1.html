@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Horizon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Event Horizon</h1>
+        <p class="tagline">Manage and explore upcoming events</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name or date (YYYY-MM-DD)"
+          aria-label="Search events"
+        />
+        <p id="searchStatus" class="assistive"></p>
+      </section>
+
+      <section class="layout">
+        <section class="events-section" aria-live="polite">
+          <h2>Events</h2>
+          <div id="eventsList" class="events-list"></div>
+        </section>
+
+        <aside class="form-section">
+          <h2>Add New Event</h2>
+          <form id="eventForm" novalidate>
+            <div class="form-field">
+              <label for="eventName">Event Name</label>
+              <input type="text" id="eventName" name="eventName" required />
+            </div>
+            <div class="form-field">
+              <label for="eventDate">Event Date</label>
+              <input type="date" id="eventDate" name="eventDate" required />
+            </div>
+            <div class="form-field">
+              <label for="eventDescription">Event Description</label>
+              <textarea
+                id="eventDescription"
+                name="eventDescription"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" id="addEventBtn" class="primary">
+              Add Event
+            </button>
+            <p
+              id="formWarning"
+              class="warning"
+              role="alert"
+              aria-live="assertive"
+              hidden
+            >
+              All fields are required.
+            </p>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="copyrightYear"></span> Muhammad Shariq</p>
+      </div>
+    </footer>
+  </body>
+</html>

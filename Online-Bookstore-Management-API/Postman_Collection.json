@@ -1,0 +1,228 @@
+{
+  "info": {
+    "name": "Online Bookstore Management API",
+    "description": "RESTful API collection for managing online bookstore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"]
+        },
+        "description": "Get all books with pagination. Use query params: page, limit, author, genre"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Books with Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books?page=1&limit=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Get books with pagination"
+      },
+      "response": []
+    },
+    {
+      "name": "Search by Author",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books?author=Tolkien",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"],
+          "query": [
+            {
+              "key": "author",
+              "value": "Tolkien"
+            }
+          ]
+        },
+        "description": "Search books by author name"
+      },
+      "response": []
+    },
+    {
+      "name": "Search by Genre",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books?genre=Fantasy",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"],
+          "query": [
+            {
+              "key": "genre",
+              "value": "Fantasy"
+            }
+          ]
+        },
+        "description": "Search books by genre"
+      },
+      "response": []
+    },
+    {
+      "name": "Search by Author and Genre",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books?author=Tolkien&genre=Fantasy",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"],
+          "query": [
+            {
+              "key": "author",
+              "value": "Tolkien"
+            },
+            {
+              "key": "genre",
+              "value": "Fantasy"
+            }
+          ]
+        },
+        "description": "Search books by both author and genre"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Book by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books/BOOK_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books", "BOOK_ID"]
+        },
+        "description": "Get a single book by ID. Replace BOOK_ID with actual ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Add New Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Hobbit\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"genre\": \"Fantasy\",\n  \"price\": 29.99,\n  \"publishedDate\": \"1937-09-21\",\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"]
+        },
+        "description": "Add a new book to the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Add Another Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Harry Potter and the Philosopher's Stone\",\n  \"author\": \"J.K. Rowling\",\n  \"genre\": \"Fantasy\",\n  \"price\": 39.99,\n  \"publishedDate\": \"1997-06-26\",\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books"]
+        },
+        "description": "Add another book to the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 34.99,\n  \"inStock\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/books/BOOK_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books", "BOOK_ID"]
+        },
+        "description": "Update a book. Replace BOOK_ID with actual ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/books/BOOK_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "books", "BOOK_ID"]
+        },
+        "description": "Delete a book. Replace BOOK_ID with actual ID"
+      },
+      "response": []
+    }
+  ]
+}
